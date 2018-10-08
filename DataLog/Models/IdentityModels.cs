@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using DataLog.Models;
+using System.Data.Entity;
 
 namespace DataLog.Models
 {
@@ -38,7 +39,10 @@ namespace DataLog.Models
         {
             return new ApplicationDbContext();
         }
+        public DbSet<Post> Posts { get; set; }
     }
+
+   
 }
 
 #region Helpers

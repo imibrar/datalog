@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Posts List"  Language="C#"  MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PostsList.aspx.cs" Inherits="DataLog.Posts.PostsList" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-<h2><%: Title %>.</h2>
+    <h2><%: Title %>.</h2>
     <div class="form-horizontal">
         <h4>
             <asp:HyperLink runat="server" ID="CreateHyperLink" ViewStateMode="Disabled">Add a new Post</asp:HyperLink>
@@ -9,7 +9,7 @@
         
         <hr />
         <div class="table-wrapper w-100">
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" EmptyDataText="There are no data records to display." AllowPaging="True" AllowSorting="True" CellPadding="4" ForeColor="#333333" GridLines="None">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" EmptyDataText="There are no data records to display." AllowPaging="True" AllowSorting="True" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDeleted="GridView1_RowDeleted" OnRowUpdated="GridView1_RowUpdated">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />

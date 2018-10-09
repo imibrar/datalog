@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLog", "DataLog\DataLog.csproj", "{12D8492C-AF34-49FD-9143-D389B12C2960}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DALUserLog", "DALUserLog\DALUserLog.csproj", "{5F7C9674-42DA-4D3B-8708-C080725228AC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{12D8492C-AF34-49FD-9143-D389B12C2960}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12D8492C-AF34-49FD-9143-D389B12C2960}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12D8492C-AF34-49FD-9143-D389B12C2960}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F7C9674-42DA-4D3B-8708-C080725228AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F7C9674-42DA-4D3B-8708-C080725228AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F7C9674-42DA-4D3B-8708-C080725228AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F7C9674-42DA-4D3B-8708-C080725228AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

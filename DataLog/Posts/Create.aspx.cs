@@ -4,7 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using DALUserLog;
 using DataLog.Models;
+using Microsoft.AspNet.Identity;
 
 namespace DataLog.Posts
 {
@@ -17,18 +19,6 @@ namespace DataLog.Posts
 
         protected void BtnPost_Click(object sender, EventArgs e)
         {
-            //var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            //var code = manager.GenerateChangePhoneNumberToken(User.Identity.GetUserId(), PhoneNumber.Text);
-            //if (manager.SmsService != null)
-            //{
-            //    var message = new IdentityMessage
-            //    {
-            //        Destination = PhoneNumber.Text,
-            //        Body = "Your security code is " + code
-            //    };
-
-            //    manager.SmsService.Send(message);
-            //}
 
             if (!String.IsNullOrEmpty(Title1.Text) && !String.IsNullOrEmpty(Details.Text))
             {
@@ -39,6 +29,22 @@ namespace DataLog.Posts
                     Details = Details.Text
                 });
                 db.SaveChanges();
+                var userId = User.Identity.GetUserId();
+                var email = User.Identity.GetUserName();
+
+               // var logService = new LogService();
+               // LogService.GetLogs(userId);
+                var userLog = new DALUserLog.UserLog
+                {
+                    UserId = userId,
+                    Action =  "Created",
+                    Details = "A New Post Created",
+                    Email = email,
+                    SendingDate = DateTime.UtcNow
+                };
+
+                LogService.AddLog(userLog);
+
 
                 Response.Redirect("/Posts/PostsList");
             }

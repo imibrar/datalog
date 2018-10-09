@@ -29,9 +29,20 @@ input[type="select"] {
 .w-100, .w-100  table{
     width: 100%;
 }
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-    .jumbotron {
+    .w-100 table td, .w-100 table th{
+        padding: 5px;
+    }
+.w-100 table td > table{
+    width: auto;
+}
+        .w-100 table td > table td > span {
+           border: 1px solid #fff;
+           display:inline-block;
+           padding: 3px;
+        }
+    /* Responsive: Portrait tablets and up */
+    @media screen and (min-width: 768px) {
+        .jumbotron {
         margin-top: 20px;
     }
     .body-content {
